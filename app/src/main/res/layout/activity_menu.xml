@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+    <TextView
+        android:id="@+id/tvNomeAplicativo"
+        android:layout_width="match_parent"
+        android:layout_height="100.dp"
+        android:layout_marginBottom="66dp"
+        android:background="#673AB7"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvOQueFazer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOQueFazer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:gravity="center"
+        android:text="@string/o_que_deseja_fazer"
+        android:textColor="#673AB7"
+        android:textSize="30.sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnListar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNomeAplicativo" />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="150.dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:paddingHorizontal="30.dp"
+        android:paddingVertical="10.dp"
+        android:text="@string/cadastrar_produto"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnListar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOQueFazer" />
+
+    <Button
+        android:id="@+id/btnListar"
+        android:layout_width="150.dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="127dp"
+        android:paddingHorizontal="30.dp"
+        android:paddingVertical="10.dp"
+        android:text="@string/listar_produtos"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCadastrar"
+        app:layout_constraintTop_toBottomOf="@+id/tvOQueFazer" />
+
+    <Button
+        android:id="@+id/btnAlterar"
+        android:layout_width="150.dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="30.dp"
+        android:paddingVertical="10.dp"
+        android:text="@string/alterar_produto"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnDeletar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastrar" />
+
+    <Button
+        android:id="@+id/btnDeletar"
+        android:layout_width="150.dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="30.dp"
+        android:paddingVertical="10.dp"
+        android:text="@string/deletar_produtos"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnAlterar"
+        app:layout_constraintTop_toBottomOf="@+id/btnListar" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="282dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="37dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnListar"
+        app:srcCompat="@drawable/storefront_80dp_000000_fill0_wght400_grad0_opsz48" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

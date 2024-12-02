@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">IMD Market</string>
+    <string name="login">Login:</string>
+    <string name="login_hint">Login</string>
+    <string name="senha">Senha:</string>
+    <string name="senha_hint">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="esqueci_minha_senha_login">Esqueci minha senha/login</string>
+    <string name="o_que_deseja_fazer">O que deseja fazer?</string>
+    <string name="cadastrar_produto">Cadastrar\nProduto</string>
+    <string name="listar_produtos">Listar\nProdutos</string>
+    <string name="alterar_produto">Alterar\nProduto</string>
+    <string name="deletar_produtos">Deletar\nProdutos</string>
+    <string name="tv_cadastrar_produto">CADASTRAR PRODUTO</string>
+    <string name="c_digo_do_produto">Código do produto:</string>
+    <string name="nome_do_produto">Nome do produto:</string>
+    <string name="descri_o_do_produto">Descrição do produto:</string>
+    <string name="estoque">Estoque:</string>
+    <string name="salvar">Salvar</string>
+    <string name="limpar">Limpar</string>
+    <string name="TV_alterar_produto">ALTERAR PRODUTO</string>
+    <string name="alterar">Alterar</string>
+    <string name="TV_deletar_produto">DELETAR PRODUTO</string>
+    <string name="deletar">Deletar</string>
+    <string name="tv_lista_de_produtos">LISTA DE PRODUTOS</string>
+    <string name="voltar">Voltar</string>
+</resources>
