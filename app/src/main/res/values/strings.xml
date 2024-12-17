@@ -24,4 +24,5 @@
     <string name="deletar">Deletar</string>
     <string name="tv_lista_de_produtos">LISTA DE PRODUTOS</string>
     <string name="voltar">Voltar</string>
+    <string name="campo_vazio">""</string>
 </resources>
