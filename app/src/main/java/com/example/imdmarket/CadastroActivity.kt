@@ -3,12 +3,10 @@ package com.example.imdmarket
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.imdmarket.databinding.ActivityCadastroBinding
-import com.example.imdmarket.databinding.ActivityListagemBinding
 import com.example.imdmarket.model.Produto
 import com.example.imdmarket.model.listaDeProdutos
 import com.google.gson.Gson
@@ -16,18 +14,12 @@ import com.google.gson.Gson
 class CadastroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCadastroBinding
-    private lateinit var bindingListagem: ActivityListagemBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityCadastroBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-        //var produtos = getArrayList(this, "produto")
-//        var adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaDeProdutos)
-//        bindingListagem.listaProdutos.adapter = adapter
 
         binding.btnSalvar.setOnClickListener {
             var codigo = binding.etCodigo.text.toString()
@@ -37,7 +29,6 @@ class CadastroActivity : AppCompatActivity() {
 
             if (codigo.isNotEmpty() && nome.isNotEmpty() && descricao.isNotEmpty() && estoque.isNotEmpty()) {
                 listaDeProdutos.add(Produto(codigo, nome, descricao, estoque.toInt()))
-                //adapter.notifyDataSetChanged()
                 saveArrayList(this, "produtos", listaDeProdutos)
                 Toast.makeText(this, "Salvo com sucesso!", Toast.LENGTH_LONG).show()
                 val telaMenu  = Intent(this, MenuActivity::class.java)
@@ -65,16 +56,4 @@ class CadastroActivity : AppCompatActivity() {
         editor.putString(key, json)
         editor.apply() // Salva as alterações
     }
-//
-//    fun getArrayList(context: Context, key: String): ArrayList<Produto> {
-//        val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-//        val gson = Gson()
-//
-//        // Recupera o JSON
-//        val json = sharedPreferences.getString(key, null)
-//
-//        // Converte o JSON de volta para um ArrayList
-//        val type = object : TypeToken<ArrayList<Produto>>() {}.type
-//        return gson.fromJson(json, type) ?: ArrayList()
-//    }
 }
