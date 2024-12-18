@@ -28,12 +28,17 @@ class CadastroActivity : AppCompatActivity() {
             var estoque = binding.etEstoque.text.toString()
 
             if (codigo.isNotEmpty() && nome.isNotEmpty() && descricao.isNotEmpty() && estoque.isNotEmpty()) {
-                listaDeProdutos.add(Produto(codigo, nome, descricao, estoque.toInt()))
-                saveArrayList(this, "produtos", listaDeProdutos)
-                Toast.makeText(this, "Salvo com sucesso!", Toast.LENGTH_LONG).show()
-                val telaMenu  = Intent(this, MenuActivity::class.java)
-                startActivity(telaMenu)
-            }else{
+                var produto = Produto(codigo, nome, descricao, estoque.toInt())
+                if (listaDeProdutos.contains(produto)) {
+                    Toast.makeText(this, "Produto já cadastrado!", Toast.LENGTH_LONG).show()
+                } else {
+                    listaDeProdutos.add(Produto(codigo, nome, descricao, estoque.toInt()))
+                    saveArrayList(this, "produtos", listaDeProdutos)
+                    Toast.makeText(this, "Produto cadastrado com sucesso!", Toast.LENGTH_LONG).show()
+                    val telaMenu = Intent(this, MenuActivity::class.java)
+                    startActivity(telaMenu)
+                }
+            } else {
                 Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_LONG).show()
             }
         }

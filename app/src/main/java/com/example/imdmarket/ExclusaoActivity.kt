@@ -24,15 +24,19 @@ class ExclusaoActivity : AppCompatActivity() {
         binding.btnDeletar.setOnClickListener {
             val codigo = binding.etCodigo.text.toString()
 
-            if (listaDeProdutos.removeIf {
-                it.codigoProduto == codigo
-            }){
-                saveArrayList(this, "produtos", listaDeProdutos)
-                Toast.makeText(this, "Produto excluído com sucesso!", Toast.LENGTH_LONG).show()
-                val telaMenu  = Intent(this, MenuActivity::class.java)
-                startActivity(telaMenu)
+            if (codigo.isNotEmpty()){
+                if (listaDeProdutos.removeIf {
+                        it.codigoProduto == codigo
+                    }){
+                    saveArrayList(this, "produtos", listaDeProdutos)
+                    Toast.makeText(this, "Produto excluído com sucesso!", Toast.LENGTH_LONG).show()
+                    val telaMenu  = Intent(this, MenuActivity::class.java)
+                    startActivity(telaMenu)
+                }else{
+                    Toast.makeText(this, "Produto não encontrado!", Toast.LENGTH_LONG).show()
+                }
             }else{
-                Toast.makeText(this, "Produto não encontrado!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Informe o código", Toast.LENGTH_LONG).show()
             }
         }
 
